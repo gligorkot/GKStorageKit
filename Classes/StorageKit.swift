@@ -28,6 +28,7 @@ public protocol ObjectStorageInterface {
 
 public protocol FileStorageInterface {
     func storeFile(_ fileData: Data, fileExtension: String, onSuccess: @escaping (URL) -> (), onFail: @escaping FailureBlock)
+    func getFileStorageURL(fileExtension: String) -> URL
     func cleanStorage(onSuccess: @escaping () -> (), onFail: @escaping FailureBlock)
 }
 
