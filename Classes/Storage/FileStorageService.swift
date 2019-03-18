@@ -18,9 +18,8 @@ final class FileStorageService: FileStorageInterface {
 
     func storeFile(_ fileData: Data, fileExtension: String, onSuccess: @escaping (URL) -> (), onFail: @escaping FailureBlock) {
         DispatchQueue.global(qos: .userInitiated).async {
-            let fileName = UUID().uuidString
-            let destinationUrl = self.documentsUrl.appendingPathComponent("\(fileName).\(fileExtension)")
-
+            let destinationUrl = self.getFileStorageURL(fileExtension: fileExtension)
+            
             if let _ = try? fileData.write(to: destinationUrl, options: Data.WritingOptions.atomic) {
                 onSuccess(destinationUrl)
             } else {
@@ -29,6 +28,11 @@ final class FileStorageService: FileStorageInterface {
                 onFail(error.toResponse())
             }
         }
+    }
+    
+    func getFileStorageURL(fileExtension: String) -> URL {
+        let fileName = UUID().uuidString
+        return self.documentsUrl.appendingPathComponent("\(fileName).\(fileExtension)")
     }
     
     func cleanStorage(onSuccess: @escaping () -> (), onFail: @escaping FailureBlock) {
@@ -46,6 +50,5 @@ final class FileStorageService: FileStorageInterface {
             }
         }
     }
-
 
 }
