@@ -12,7 +12,7 @@ target :'GKStorageKitExample' do
     pod 'GKStorageKit', :path => '../'
 
      target :'GKStorageKitTests' do
-         pod 'Nimble', '~> 7.0.x'
+         pod 'Nimble', '~> 8.x'
          pod 'SwiftTestUtils', '~> 0.0.1'
      end
 end

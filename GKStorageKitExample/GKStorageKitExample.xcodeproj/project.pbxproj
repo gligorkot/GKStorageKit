@@ -227,12 +227,12 @@
 				TargetAttributes = {
 					864C4E0520648F7F00A89D6C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 					864C4E2A206495EB00A89D6C = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 864C4E0520648F7F00A89D6C;
 					};
@@ -283,17 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GKBaseKit/GKBaseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GKStorageKit/GKStorageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKBaseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKStorageKit.framework",
@@ -301,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6D27E16C69B95E23B600812 /* [CP] Embed Pods Frameworks */ = {
@@ -309,10 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GKBaseKit/GKBaseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GKStorageKit/GKStorageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
@@ -320,8 +314,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftTestUtils/SwiftTestUtils.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKBaseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKStorageKit.framework",
@@ -331,7 +323,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8B4B19B0861DAE51DE41265 /* [CP] Check Pods Manifest.lock */ = {
@@ -557,7 +549,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.GKStorageKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -573,7 +565,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.GKStorageKitExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -587,7 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.StorageKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKStorageKitExample.app/GKStorageKitExample";
 			};
@@ -602,7 +594,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.StorageKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKStorageKitExample.app/GKStorageKitExample";
 			};
