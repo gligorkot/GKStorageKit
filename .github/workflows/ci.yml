@@ -78,7 +78,7 @@ jobs:
     - name: Run tests that require iOS host for keychain entitlement
       run: |
         cd SecureStorageTestsHostApp
-        xcodebuild -project SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.7' test
+        xcodebuild -project SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=13.7' test
       shell: bash
 
   test-keychain-iOS-host-11-XCode12:
@@ -96,7 +96,7 @@ jobs:
     - name: Run tests that require iOS host for keychain entitlement
       run: |
         cd SecureStorageTestsHostApp
-        xcodebuild -project SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.5' test
+        xcodebuild -project SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=14.5' test
       shell: bash
 
   test-keychain-iOS-host-11-XCode13:
