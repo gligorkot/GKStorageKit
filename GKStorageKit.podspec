@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                  = 'GKStorageKit'
-  s.version               = '1.1.1'
+  s.version               = '2.0.0'
   s.summary               = 'GKStorageKit framework.'
   s.description           = <<-DESC
                             * GKStorageKit framework
@@ -14,12 +14,12 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source                = { :git => 'https://github.com/gligorkot/GKStorageKit.git', :tag => s.version.to_s }
 
-  s.source_files          = 'Classes/**', 'Classes/**/*.{swift}'
-  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '5.2' }
+  s.source_files          = 'Sources/GKStorageKit/**/*'
+  s.pod_target_xcconfig   = { 'SWIFT_VERSION' => '5.5' }
 
-  s.dependency 'Valet', '~> 3.2.x'
-  s.dependency 'GKBaseKit', '~> 1.0.x'
+  s.dependency 'Valet', '~> 4.1.x'
+  s.dependency 'GKBaseKit', '~> 2.0.x'
   s.requires_arc          = true
-  s.swift_versions        = ['4.0', '4.1', '4.2', '5.0', '5.1', '5.2']
+  s.swift_versions        = ['4.0', '4.1', '4.2', '5.0', '5.1', '5.2', '5.3', '5.4', '5.5']
 
 end
