@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		067DD43D39E3A40502BED440 /* Pods_GKStorageKitExample_GKStorageKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE412803F5934BE45E1D2DB /* Pods_GKStorageKitExample_GKStorageKitTests.framework */; };
+		3D989B100EEAA018738385D5 /* Pods_GKStorageKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D824D5BBE5A119398EBA2B /* Pods_GKStorageKitExample.framework */; };
+		864C4E0A20648F7F00A89D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E0920648F7F00A89D6C /* AppDelegate.swift */; };
+		864C4E0C20648F7F00A89D6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E0B20648F7F00A89D6C /* ViewController.swift */; };
+		864C4E0F20648F7F00A89D6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864C4E0D20648F7F00A89D6C /* Main.storyboard */; };
+		864C4E1120648F7F00A89D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864C4E1020648F7F00A89D6C /* Assets.xcassets */; };
+		864C4E1420648F7F00A89D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864C4E1220648F7F00A89D6C /* LaunchScreen.storyboard */; };
+		864C4E2E206495EB00A89D6C /* StorageKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E2D206495EB00A89D6C /* StorageKitTests.swift */; };
+		864C4E422064961000A89D6C /* StorageKitConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E372064960F00A89D6C /* StorageKitConfigurationTests.swift */; };
+		864C4E432064961000A89D6C /* ErrorValet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E392064960F00A89D6C /* ErrorValet.swift */; };
+		864C4E452064961000A89D6C /* TestStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E3B2064960F00A89D6C /* TestStorage.swift */; };
+		864C4E462064961000A89D6C /* ObjectStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E3D2064960F00A89D6C /* ObjectStorageServiceTests.swift */; };
+		864C4E472064961000A89D6C /* SecureStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E3E2064960F00A89D6C /* SecureStorageServiceTests.swift */; };
+		864C4E482064961000A89D6C /* FileStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C4E3F2064960F00A89D6C /* FileStorageServiceTests.swift */; };
+		86808CB2207F51A9006BD688 /* CodableValueClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86808CB1207F51A9006BD688 /* CodableValueClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		864C4E492064978200A89D6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 864C4DFE20648F7F00A89D6C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864C4E0520648F7F00A89D6C;
+			remoteInfo = StorageKitExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D4642354CCABC1540CB53CE /* Pods-GKStorageKitExample-GKStorageKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKStorageKitExample-GKStorageKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		19D824D5BBE5A119398EBA2B /* Pods_GKStorageKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKStorageKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2263AC1DE3DB361EB12D72D5 /* Pods-GKStorageKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKStorageKitExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample.release.xcconfig"; sourceTree = "<group>"; };
+		5FDB3574D3E0DD1FC5D5826D /* Pods-GKStorageKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKStorageKitExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample.debug.xcconfig"; sourceTree = "<group>"; };
+		864C4E0620648F7F00A89D6C /* GKStorageKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKStorageKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		864C4E0920648F7F00A89D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		864C4E0B20648F7F00A89D6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		864C4E0E20648F7F00A89D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		864C4E1020648F7F00A89D6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		864C4E1320648F7F00A89D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		864C4E1520648F7F00A89D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		864C4E2B206495EB00A89D6C /* GKStorageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKStorageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		864C4E2D206495EB00A89D6C /* StorageKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKitTests.swift; sourceTree = "<group>"; };
+		864C4E2F206495EB00A89D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		864C4E372064960F00A89D6C /* StorageKitConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageKitConfigurationTests.swift; sourceTree = "<group>"; };
+		864C4E392064960F00A89D6C /* ErrorValet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorValet.swift; sourceTree = "<group>"; };
+		864C4E3B2064960F00A89D6C /* TestStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStorage.swift; sourceTree = "<group>"; };
+		864C4E3D2064960F00A89D6C /* ObjectStorageServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStorageServiceTests.swift; sourceTree = "<group>"; };
+		864C4E3E2064960F00A89D6C /* SecureStorageServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorageServiceTests.swift; sourceTree = "<group>"; };
+		864C4E3F2064960F00A89D6C /* FileStorageServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorageServiceTests.swift; sourceTree = "<group>"; };
+		86808CB1207F51A9006BD688 /* CodableValueClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableValueClass.swift; sourceTree = "<group>"; };
+		AFE412803F5934BE45E1D2DB /* Pods_GKStorageKitExample_GKStorageKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GKStorageKitExample_GKStorageKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8A358C8A5254C9E3B52F24E /* Pods-GKStorageKitExample-GKStorageKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKStorageKitExample-GKStorageKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		864C4E0320648F7F00A89D6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D989B100EEAA018738385D5 /* Pods_GKStorageKitExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864C4E28206495EB00A89D6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				067DD43D39E3A40502BED440 /* Pods_GKStorageKitExample_GKStorageKitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		864C4DFD20648F7F00A89D6C = {
+			isa = PBXGroup;
+			children = (
+				864C4E0820648F7F00A89D6C /* GKStorageKitExample */,
+				864C4E2C206495EB00A89D6C /* GKStorageKitTests */,
+				864C4E0720648F7F00A89D6C /* Products */,
+				CA110EA9B467CF8555EF759B /* Pods */,
+				A0D5A739DD5F22A6DD5BD2C6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		864C4E0720648F7F00A89D6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				864C4E0620648F7F00A89D6C /* GKStorageKitExample.app */,
+				864C4E2B206495EB00A89D6C /* GKStorageKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		864C4E0820648F7F00A89D6C /* GKStorageKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				864C4E0920648F7F00A89D6C /* AppDelegate.swift */,
+				864C4E0B20648F7F00A89D6C /* ViewController.swift */,
+				864C4E0D20648F7F00A89D6C /* Main.storyboard */,
+				864C4E1020648F7F00A89D6C /* Assets.xcassets */,
+				864C4E1220648F7F00A89D6C /* LaunchScreen.storyboard */,
+				864C4E1520648F7F00A89D6C /* Info.plist */,
+			);
+			path = GKStorageKitExample;
+			sourceTree = "<group>";
+		};
+		864C4E2C206495EB00A89D6C /* GKStorageKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				864C4E362064960F00A89D6C /* Configuration */,
+				864C4E3C2064960F00A89D6C /* Storage */,
+				864C4E382064960F00A89D6C /* Test Helpers */,
+				864C4E2D206495EB00A89D6C /* StorageKitTests.swift */,
+				864C4E2F206495EB00A89D6C /* Info.plist */,
+			);
+			path = GKStorageKitTests;
+			sourceTree = "<group>";
+		};
+		864C4E362064960F00A89D6C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				864C4E372064960F00A89D6C /* StorageKitConfigurationTests.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		864C4E382064960F00A89D6C /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86808CB1207F51A9006BD688 /* CodableValueClass.swift */,
+				864C4E392064960F00A89D6C /* ErrorValet.swift */,
+				864C4E3B2064960F00A89D6C /* TestStorage.swift */,
+			);
+			path = "Test Helpers";
+			sourceTree = "<group>";
+		};
+		864C4E3C2064960F00A89D6C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				864C4E3D2064960F00A89D6C /* ObjectStorageServiceTests.swift */,
+				864C4E3E2064960F00A89D6C /* SecureStorageServiceTests.swift */,
+				864C4E3F2064960F00A89D6C /* FileStorageServiceTests.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		A0D5A739DD5F22A6DD5BD2C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19D824D5BBE5A119398EBA2B /* Pods_GKStorageKitExample.framework */,
+				AFE412803F5934BE45E1D2DB /* Pods_GKStorageKitExample_GKStorageKitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA110EA9B467CF8555EF759B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FDB3574D3E0DD1FC5D5826D /* Pods-GKStorageKitExample.debug.xcconfig */,
+				2263AC1DE3DB361EB12D72D5 /* Pods-GKStorageKitExample.release.xcconfig */,
+				0D4642354CCABC1540CB53CE /* Pods-GKStorageKitExample-GKStorageKitTests.debug.xcconfig */,
+				E8A358C8A5254C9E3B52F24E /* Pods-GKStorageKitExample-GKStorageKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		864C4E0520648F7F00A89D6C /* GKStorageKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864C4E1820648F7F00A89D6C /* Build configuration list for PBXNativeTarget "GKStorageKitExample" */;
+			buildPhases = (
+				E5EB2DD4B685432F5078D825 /* [CP] Check Pods Manifest.lock */,
+				864C4E0220648F7F00A89D6C /* Sources */,
+				864C4E0320648F7F00A89D6C /* Frameworks */,
+				864C4E0420648F7F00A89D6C /* Resources */,
+				7BE0E6802BC22A1D01F50C3F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GKStorageKitExample;
+			productName = StorageKitExample;
+			productReference = 864C4E0620648F7F00A89D6C /* GKStorageKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		864C4E2A206495EB00A89D6C /* GKStorageKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 864C4E30206495EB00A89D6C /* Build configuration list for PBXNativeTarget "GKStorageKitTests" */;
+			buildPhases = (
+				D8B4B19B0861DAE51DE41265 /* [CP] Check Pods Manifest.lock */,
+				864C4E27206495EB00A89D6C /* Sources */,
+				864C4E28206495EB00A89D6C /* Frameworks */,
+				864C4E29206495EB00A89D6C /* Resources */,
+				C6D27E16C69B95E23B600812 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				864C4E4A2064978200A89D6C /* PBXTargetDependency */,
+			);
+			name = GKStorageKitTests;
+			productName = StorageKitTests;
+			productReference = 864C4E2B206495EB00A89D6C /* GKStorageKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		864C4DFE20648F7F00A89D6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Gligor Kotushevski";
+				TargetAttributes = {
+					864C4E0520648F7F00A89D6C = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1140;
+						ProvisioningStyle = Automatic;
+					};
+					864C4E2A206495EB00A89D6C = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1140;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 864C4E0520648F7F00A89D6C;
+					};
+				};
+			};
+			buildConfigurationList = 864C4E0120648F7F00A89D6C /* Build configuration list for PBXProject "GKStorageKitExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 864C4DFD20648F7F00A89D6C;
+			productRefGroup = 864C4E0720648F7F00A89D6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				864C4E0520648F7F00A89D6C /* GKStorageKitExample */,
+				864C4E2A206495EB00A89D6C /* GKStorageKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		864C4E0420648F7F00A89D6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864C4E1420648F7F00A89D6C /* LaunchScreen.storyboard in Resources */,
+				864C4E1120648F7F00A89D6C /* Assets.xcassets in Resources */,
+				864C4E0F20648F7F00A89D6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864C4E29206495EB00A89D6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7BE0E6802BC22A1D01F50C3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GKBaseKit/GKBaseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GKStorageKit/GKStorageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKBaseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKStorageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample/Pods-GKStorageKitExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6D27E16C69B95E23B600812 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GKBaseKit/GKBaseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GKStorageKit/GKStorageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTestUtils/SwiftTestUtils.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKBaseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GKStorageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTestUtils.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GKStorageKitExample-GKStorageKitTests/Pods-GKStorageKitExample-GKStorageKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8B4B19B0861DAE51DE41265 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GKStorageKitExample-GKStorageKitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5EB2DD4B685432F5078D825 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GKStorageKitExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		864C4E0220648F7F00A89D6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864C4E0C20648F7F00A89D6C /* ViewController.swift in Sources */,
+				864C4E0A20648F7F00A89D6C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		864C4E27206495EB00A89D6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				864C4E2E206495EB00A89D6C /* StorageKitTests.swift in Sources */,
+				864C4E482064961000A89D6C /* FileStorageServiceTests.swift in Sources */,
+				864C4E422064961000A89D6C /* StorageKitConfigurationTests.swift in Sources */,
+				864C4E462064961000A89D6C /* ObjectStorageServiceTests.swift in Sources */,
+				86808CB2207F51A9006BD688 /* CodableValueClass.swift in Sources */,
+				864C4E452064961000A89D6C /* TestStorage.swift in Sources */,
+				864C4E472064961000A89D6C /* SecureStorageServiceTests.swift in Sources */,
+				864C4E432064961000A89D6C /* ErrorValet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		864C4E4A2064978200A89D6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864C4E0520648F7F00A89D6C /* GKStorageKitExample */;
+			targetProxy = 864C4E492064978200A89D6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		864C4E0D20648F7F00A89D6C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864C4E0E20648F7F00A89D6C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		864C4E1220648F7F00A89D6C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864C4E1320648F7F00A89D6C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		864C4E1620648F7F00A89D6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		864C4E1720648F7F00A89D6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		864C4E1920648F7F00A89D6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FDB3574D3E0DD1FC5D5826D /* Pods-GKStorageKitExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GKStorageKitExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.GKStorageKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		864C4E1A20648F7F00A89D6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2263AC1DE3DB361EB12D72D5 /* Pods-GKStorageKitExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GKStorageKitExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.GKStorageKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		864C4E31206495EB00A89D6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4642354CCABC1540CB53CE /* Pods-GKStorageKitExample-GKStorageKitTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GKStorageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.StorageKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKStorageKitExample.app/GKStorageKitExample";
+			};
+			name = Debug;
+		};
+		864C4E32206495EB00A89D6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8A358C8A5254C9E3B52F24E /* Pods-GKStorageKitExample-GKStorageKitTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = GKStorageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.gligor.StorageKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKStorageKitExample.app/GKStorageKitExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		864C4E0120648F7F00A89D6C /* Build configuration list for PBXProject "GKStorageKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864C4E1620648F7F00A89D6C /* Debug */,
+				864C4E1720648F7F00A89D6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		864C4E1820648F7F00A89D6C /* Build configuration list for PBXNativeTarget "GKStorageKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864C4E1920648F7F00A89D6C /* Debug */,
+				864C4E1A20648F7F00A89D6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		864C4E30206495EB00A89D6C /* Build configuration list for PBXNativeTarget "GKStorageKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				864C4E31206495EB00A89D6C /* Debug */,
+				864C4E32206495EB00A89D6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 864C4DFE20648F7F00A89D6C /* Project object */;
+}
