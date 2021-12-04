@@ -1,0 +1,117 @@
+name: CI
+
+on: pull_request
+
+jobs:
+  pod-lint-10_15:
+    name: Pod lint
+    runs-on: macos-10.15
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Bundle install
+      run: bundle install
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Pod lint
+      run: bundle exec pod lib lint --verbose --fail-fast --swift-version=5.5
+      shell: bash
+
+  test-no-iOS-host-10_15:
+    name: Run swift tests that don't require iOS host on MacOS 10.15
+    runs-on: macos-10.15
+    strategy:
+      matrix:
+        # latest 11 and all available versions 12
+        xcodeVersions: ['11.7', '12.0', '12.1', '12.2', '12.3', '12.4']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ matrix.xcodeVersions }}
+
+    - name: Run tests that don't require iOS host
+      run: swift test -c debug -Xswiftc -enable-testing
+      shell: bash
+
+  test-no-iOS-host-11:
+    name: Run swift tests that don't require iOS host on MacOS 11
+    runs-on: macos-11
+    strategy:
+      matrix:
+        # latest 12 and all available versions 13
+        xcodeVersions: ['12.5', '13.0', '13.1']
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: ${{ matrix.xcodeVersions }}
+
+    - name: Run tests that don't require iOS host
+      run: swift test -c debug -Xswiftc -enable-testing
+      shell: bash
+
+  test-keychain-iOS-host-10_15-XCode11:
+    name: Run swift tests that require keychain entitlement on XCode 11
+    runs-on: macos-10.15
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '11.7'
+
+    - name: Run tests that require iOS host for keychain entitlement
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=13.7" test
+      shell: bash
+
+  test-keychain-iOS-host-11-XCode12:
+    name: Run swift tests that require keychain entitlement on XCode 12
+    runs-on: macos-11
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '12.5'
+
+    - name: Run tests that require iOS host for keychain entitlement
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12,OS=14.5" test
+      shell: bash
+
+  test-keychain-iOS-host-11-XCode13:
+    name: Run swift tests that require keychain entitlement on XCode 13
+    runs-on: macos-11
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Set up XCode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Run tests that require iOS host for keychain entitlement
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=15.0" test
+      shell: bash
