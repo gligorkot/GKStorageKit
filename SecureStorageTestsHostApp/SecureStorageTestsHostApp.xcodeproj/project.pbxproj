@@ -14,7 +14,6 @@
 		8655DD65275B240300C1A277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8655DD63275B240300C1A277 /* LaunchScreen.storyboard */; };
 		8655DD70275B240300C1A277 /* StorageKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655DD6F275B240300C1A277 /* StorageKitTests.swift */; };
 		8655DD8A275B24F600C1A277 /* SecureStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655DD89275B24F600C1A277 /* SecureStorageServiceTests.swift */; };
-		8655DD8F275B25C600C1A277 /* Valet in Frameworks */ = {isa = PBXBuildFile; productRef = 8655DD8E275B25C600C1A277 /* Valet */; };
 		8655DD95275B26E500C1A277 /* GKStorageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8655DD94275B26E500C1A277 /* GKStorageKit */; };
 		8655DDA4275B278A00C1A277 /* ErrorValet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655DDA0275B278A00C1A277 /* ErrorValet.swift */; };
 		8655DDA5275B278A00C1A277 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655DDA1275B278A00C1A277 /* TestHelpers.swift */; };
@@ -55,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8655DD8F275B25C600C1A277 /* Valet in Frameworks */,
 				8655DD95275B26E500C1A277 /* GKStorageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +155,6 @@
 			);
 			name = SecureStorageTestsHostApp;
 			packageProductDependencies = (
-				8655DD8E275B25C600C1A277 /* Valet */,
 				8655DD94275B26E500C1A277 /* GKStorageKit */,
 			);
 			productName = SecureStorageTestsHostApp;
@@ -426,6 +423,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +451,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +473,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +496,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,11 +555,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8655DD8E275B25C600C1A277 /* Valet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8655DD8D275B25C600C1A277 /* XCRemoteSwiftPackageReference "Valet" */;
-			productName = Valet;
-		};
 		8655DD94275B26E500C1A277 /* GKStorageKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = GKStorageKit;
