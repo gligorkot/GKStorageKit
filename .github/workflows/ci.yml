@@ -75,16 +75,11 @@ jobs:
       with:
         xcode-version: '11.7'
 
-    - name: Set up Simulator
-      run: |
-        sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-        sudo ln -s /Applications/Xcode_11.7.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 13.7.simruntime
-        xcrun simctl list runtimes
-        xcrun simctl create Custom-iPhone-11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-13-7" | pbcopy
-        xcrun simctl boot $(pbpaste)
+    - name: List devices
+      run: instruments -s devices
 
     - name: Run tests that require iOS host for keychain entitlement
-      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=Custom-iPhone-11,OS=13.7' test
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=13.7" test
       shell: bash
 
   test-keychain-iOS-host-11-XCode12:
@@ -99,16 +94,11 @@ jobs:
       with:
         xcode-version: '12.5'
 
-    - name: Set up Simulator
-      run: |
-        sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-        sudo ln -s /Applications/Xcode_12.5.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.5.simruntime
-        xcrun simctl list runtimes
-        xcrun simctl create Custom-iPhone-12 "iPhone 12" "com.apple.CoreSimulator.SimRuntime.iOS-14-5" | pbcopy
-        xcrun simctl boot $(pbpaste)
+    - name: List devices
+      run: instruments -s devices
 
     - name: Run tests that require iOS host for keychain entitlement
-      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=Custom-iPhone-12,OS=14.5' test
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12,OS=14.5" test
       shell: bash
 
   test-keychain-iOS-host-11-XCode13:
@@ -124,5 +114,5 @@ jobs:
         xcode-version: latest-stable
 
     - name: Run tests that require iOS host for keychain entitlement
-      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0' test
+      run: xcodebuild -project SecureStorageTestsHostApp/SecureStorageTestsHostApp.xcodeproj -scheme SecureStorageTestsHostApp -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13,OS=15.0" test
       shell: bash
