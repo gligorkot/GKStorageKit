@@ -80,7 +80,7 @@ jobs:
         sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
         sudo ln -s /Applications/Xcode_11.7.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 13.7.simruntime
         xcrun simctl list runtimes
-        xcrun simctl create custom-test-device "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-13-7"
+        xcrun simctl create custom-test-device "iPhone 11" "com.apple.CoreSimulator.SimDeviceType.iPhone-11" "com.apple.CoreSimulator.SimRuntime.iOS-13-7"
         xcrun simctl list devices 13.7
 
     - name: Run tests that require iOS host for keychain entitlement
@@ -104,7 +104,7 @@ jobs:
         sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
         sudo ln -s /Applications/Xcode_12.5.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.5.simruntime
         xcrun simctl list runtimes
-        xcrun simctl create custom-test-device "iPhone 12" "com.apple.CoreSimulator.SimRuntime.iOS-14-5"
+        xcrun simctl create custom-test-device "iPhone 12" "com.apple.CoreSimulator.SimDeviceType.iPhone-12" "com.apple.CoreSimulator.SimRuntime.iOS-14-5"
         xcrun simctl list devices 14.5
 
     - name: Run tests that require iOS host for keychain entitlement
