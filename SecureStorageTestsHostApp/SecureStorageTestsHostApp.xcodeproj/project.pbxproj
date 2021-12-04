@@ -107,18 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				8655DD9F275B278A00C1A277 /* Test Helpers */,
-				8655DD88275B24DF00C1A277 /* Storage */,
+				8655DD89275B24F600C1A277 /* SecureStorageServiceTests.swift */,
 				8655DD6F275B240300C1A277 /* StorageKitTests.swift */,
 			);
 			path = SecureStorageTestsHostAppTests;
-			sourceTree = "<group>";
-		};
-		8655DD88275B24DF00C1A277 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				8655DD89275B24F600C1A277 /* SecureStorageServiceTests.swift */,
-			);
-			path = Storage;
 			sourceTree = "<group>";
 		};
 		8655DD91275B265200C1A277 /* Packages */ = {

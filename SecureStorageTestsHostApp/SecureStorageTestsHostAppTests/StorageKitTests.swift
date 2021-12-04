@@ -59,35 +59,5 @@ class StorageKitTests: XCTestCase {
             }
         }
     }
-    
-    func test_storageKitSuccessfullyCleanStorages() {
-        let ex = expectation(description: "test_storageKitSuccessfullyCleanStorages")
-        var cleared: Bool = false
-        
-        StorageKit.cleanupStorages {
-            cleared = true
-            ex.fulfill()
-        }
-
-        waitForExpectations(timeout: defaultTimeout) { (_) in
-            XCTAssertTrue(cleared)
-        }
-    }
-
-    func test_storageKitErrorCleanSecureStorage() {
-        // override the setUp
-        StorageKit.initStorageKit(storage: ErrorStorage())
-        let ex = expectation(description: "test_storageKitErrorCleanSecureStorage")
-        var cleared: Bool = false
-
-        StorageKit.cleanupStorages {
-            cleared = true
-            ex.fulfill()
-        }
-
-        waitForExpectations(timeout: defaultTimeout) { (_) in
-            XCTAssertTrue(cleared)
-        }
-    }
 
 }

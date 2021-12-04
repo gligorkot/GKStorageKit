@@ -29,36 +29,6 @@ class StorageKitTests: XCTestCase {
     func test_storageKitParamsNotNilForDefaultStorage() {
         XCTAssertNotNil(StorageKitConfiguration.shared.storage)
     }
-//    TODO: Move test
-//    func test_storageKitSuccessfullyStoreValueAndRetrieveIt() {
-//        let ex = expectation(description: "test_storageKitSuccessfullyStoreValueAndRetrieveIt")
-//        let key = "key"
-//        let storedValue = "Pa$$w0rd"
-//        var extractedValue: String?
-//        var error: ErrorResponse?
-//
-//        StorageKit.secureStorage.storeString(storedValue, forKey: key, onSuccess: {
-//            StorageKit.secureStorage.getString(forKey: key, onSuccess: { value in
-//                extractedValue = value
-//                ex.fulfill()
-//            }) { e in
-//                error = e
-//                ex.fulfill()
-//            }
-//        }) { e in
-//            error = e
-//            ex.fulfill()
-//        }
-//
-//        waitForExpectations(timeout: defaultTimeout) { (_) in
-//            if error != nil {
-//                XCTFail()
-//            } else {
-//                XCTAssertNotNil(extractedValue)
-//                XCTAssertEqual(extractedValue, storedValue)
-//            }
-//        }
-//    }
     
     func test_storageKitSuccessfullyCleanStorages() {
         let ex = expectation(description: "test_storageKitSuccessfullyCleanStorages")
