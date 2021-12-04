@@ -24,6 +24,7 @@ jobs:
       shell: bash
 
   test-no-iOS-host-10_15:
+    name: Run swift tests that don't require iOS host on MacOS 10.15
     runs-on: macos-10.15
     strategy:
       matrix:
@@ -44,6 +45,7 @@ jobs:
       shell: bash
 
   test-no-iOS-host-11:
+    name: Run swift tests that don't require iOS host on MacOS 11
     runs-on: macos-11
     strategy:
       matrix:
@@ -64,6 +66,7 @@ jobs:
       shell: bash
 
   test-keychain-iOS-host-10_15-XCode11:
+    name: Run swift tests that require keychain entitlement on XCode 11
     runs-on: macos-10.15
 
     steps:
@@ -80,6 +83,7 @@ jobs:
       shell: bash
 
   test-keychain-iOS-host-11-XCode12:
+    name: Run swift tests that require keychain entitlement on XCode 12
     runs-on: macos-11
 
     steps:
@@ -96,6 +100,7 @@ jobs:
       shell: bash
 
   test-keychain-iOS-host-11-XCode13:
+    name: Run swift tests that require keychain entitlement on XCode 13
     runs-on: macos-11
 
     steps:
