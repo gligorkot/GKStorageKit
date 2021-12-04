@@ -1,5 +1,7 @@
 # GKStorageKit
 
+[![CI](https://github.com/gligorkot/GKStorageKit/actions/workflows/ci.yml/badge.svg)](https://github.com/gligorkot/GKStorageKit/actions/workflows/ci.yml)
+
 Storage package adding default implementations for three types of storages:
 
 1. File storage - defaults to the document directory for the app
