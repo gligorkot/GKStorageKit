@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "GKStorageKit",
+    platforms: [.iOS(.v9)],
     products: [
         .library(
             name: "GKStorageKit",
