@@ -47,26 +47,11 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
         objectStorage.removeObject(forKey: key)
         onSuccess()
     }
-    
-    private let persistentKey = "GKPersistent"
-    func storePersistentObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ()) {
-        storeObject(value, forKey: key + persistentKey, onSuccess: onSuccess)
-    }
-
-    func getPersistentObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ()) {
-        getObject(forKey: key + persistentKey, onSuccess: onSuccess)
-    }
-
-    func removePersistentValue(forKey key: String, onSuccess: () -> ()) {
-        removeValue(forKey: key + persistentKey, onSuccess: onSuccess)
-    }
 
     func cleanStorage(onSuccess: () -> ()) {
         let dict = objectStorage.dictionaryRepresentation()
         for key in dict.keys {
-            if !key.contains("GKPersistent") {
-                objectStorage.removeObject(forKey: key)
-            }
+            objectStorage.removeObject(forKey: key)
         }
         objectStorage.removeSuite(named: storage.storageIdentifier)
         // force synchronize as we've seen the cache not being refreshed at times
