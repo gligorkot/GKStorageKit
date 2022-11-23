@@ -16,6 +16,10 @@ public final class DefaultStorage: StorageProtocol {
     public var storageIdentifier: String {
         return "defaultStorage"
     }
+    
+    public var persistentStorageIdentifier: String {
+        return "persistentStorage"
+    }
 
     public var secureStorage: SecureStorage {
         guard let valetIdentifier = Identifier(nonEmpty: storageIdentifier) else {
@@ -26,6 +30,10 @@ public final class DefaultStorage: StorageProtocol {
 
     public var userDefaults: UserDefaults {
         return UserDefaults(suiteName: storageIdentifier)!
+    }
+    
+    public var persistentUserDefaults: UserDefaults {
+        return UserDefaults(suiteName: persistentStorageIdentifier)!
     }
 
     public var fileStorageUrl: URL {

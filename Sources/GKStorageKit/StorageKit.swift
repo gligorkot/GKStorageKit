@@ -24,9 +24,6 @@ public protocol ObjectStorageInterface {
     func storeObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
     func getObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ())
     func removeValue(forKey key: String, onSuccess: () -> ())
-    func storePersistentObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
-    func getPersistentObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ())
-    func removePersistentValue(forKey key: String, onSuccess: () -> ())
     func cleanStorage(onSuccess: () -> ())
 }
 
@@ -51,6 +48,10 @@ public final class StorageKit {
 
     public class var objectStorage: ObjectStorageInterface {
         return ObjectStorageService(storage: StorageKitConfiguration.shared.storage.userDefaults)
+    }
+    
+    public class var persistentObjectStorage: ObjectStorageInterface {
+        return ObjectStorageService(storage: StorageKitConfiguration.shared.storage.persistentUserDefaults)
     }
 
     public class var fileStorage: FileStorageInterface {
