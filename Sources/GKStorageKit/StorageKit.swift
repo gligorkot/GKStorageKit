@@ -23,6 +23,8 @@ public protocol ObjectStorageInterface {
     func getCollection<T: Codable>(forKey key: String, onSuccess: ([T]?) -> ())
     func storeObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
     func getObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ())
+    func storePersistentObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
+    func getPersistentObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ())
     func removeValue(forKey key: String, onSuccess: () -> ())
     func cleanStorage(onSuccess: () -> ())
 }
