@@ -15,6 +15,10 @@ final class TestStorage: StorageProtocol {
     var storageIdentifier: String {
         return "testStorage"
     }
+    
+    var persistentStorageIdentifier: String {
+        return "testPersistentStorage"
+    }
 
     var secureStorage: SecureStorage {
         return Valet.iCloudValet(with: Identifier(nonEmpty: storageIdentifier)!, accessibility: .whenUnlocked)
@@ -22,6 +26,10 @@ final class TestStorage: StorageProtocol {
 
     var userDefaults: UserDefaults {
         return UserDefaults(suiteName: storageIdentifier)!
+    }
+    
+    var persistentUserDefaults: UserDefaults {
+        return UserDefaults(suiteName: persistentStorageIdentifier)!
     }
 
     var fileStorageUrl: URL {
@@ -34,6 +42,10 @@ final class ErrorStorage: StorageProtocol {
     var storageIdentifier: String {
         return "errorTestStorage"
     }
+    
+    var persistentStorageIdentifier: String {
+        return "errorTestPersistentStorage"
+    }
 
     var secureStorage: SecureStorage {
         return ErrorValet()
@@ -41,6 +53,10 @@ final class ErrorStorage: StorageProtocol {
 
     var userDefaults: UserDefaults {
         return UserDefaults(suiteName: storageIdentifier)!
+    }
+    
+    var persistentUserDefaults: UserDefaults {
+        return UserDefaults(suiteName: persistentStorageIdentifier)!
     }
 
     var fileStorageUrl: URL {
