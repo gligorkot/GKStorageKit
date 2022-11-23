@@ -43,6 +43,11 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
         }
     }
     
+    func removeValue(forKey key: String, onSuccess: () -> ()) {
+        objectStorage.removeObject(forKey: key)
+        onSuccess()
+    }
+    
     private let persistentKey = "GKPersistent"
     func storePersistentObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ()) {
         storeObject(value, forKey: key + persistentKey, onSuccess: onSuccess)
@@ -52,9 +57,8 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
         getObject(forKey: key + persistentKey, onSuccess: onSuccess)
     }
 
-    func removeValue(forKey key: String, onSuccess: () -> ()) {
-        objectStorage.removeObject(forKey: key)
-        onSuccess()
+    func removePersistentValue(forKey key: String, onSuccess: () -> ()) {
+        removeValue(forKey: key + persistentKey, onSuccess: onSuccess)
     }
 
     func cleanStorage(onSuccess: () -> ()) {
