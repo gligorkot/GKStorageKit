@@ -49,6 +49,10 @@ public final class StorageKit {
     public class var objectStorage: ObjectStorageInterface {
         return ObjectStorageService(storage: StorageKitConfiguration.shared.storage.userDefaults)
     }
+    
+    public class var persistentObjectStorage: ObjectStorageInterface {
+        return ObjectStorageService(storage: StorageKitConfiguration.shared.storage.persistentUserDefaults)
+    }
 
     public class var fileStorage: FileStorageInterface {
         return FileStorageService(documentsUrl: StorageKitConfiguration.shared.storage.fileStorageUrl)
