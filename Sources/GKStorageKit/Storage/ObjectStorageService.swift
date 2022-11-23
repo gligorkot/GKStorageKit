@@ -42,6 +42,7 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
             onSuccess(nil)
         }
     }
+
     func removeValue(forKey key: String, onSuccess: () -> ()) {
         objectStorage.removeObject(forKey: key)
         onSuccess()
