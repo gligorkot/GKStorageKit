@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct StorableTimestampItem<T: Codable>: Codable {
-    let timestamp: TimeInterval
+struct PerishableItem<T: Codable>: Codable {
+    let expireOn: TimeInterval
     let item: T
 }
 
-struct StorableTimestampCollection<T: Codable>: Codable {
-    let timestamp: TimeInterval
+struct PerishableCollection<T: Codable>: Codable {
+    let expireOn: TimeInterval
     let collection: Array<T>
 }
