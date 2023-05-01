@@ -42,6 +42,38 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
             onSuccess(nil)
         }
     }
+    
+    func storePerishableObject<T: Codable>(_ value: T, forKey key: String, expireAfter timeInterval: TimeInterval, onSuccess: () -> ()) {
+        let storableTimestampItem = PerishableItem<T>(expireOn: Date().timeIntervalSince1970 + timeInterval, item: value)
+        storeObject(storableTimestampItem, forKey: key, onSuccess: onSuccess)
+    }
+    
+    func getPerishableObject<T: Codable>(forKey key: String, onSuccess: (T) -> (), expired: () -> ()) {
+        getObject(forKey: key) { (storable: PerishableItem<T>?) in
+            if let storable = storable, storable.expireOn > Date().timeIntervalSince1970 {
+                // if cache exists and timestamp is not older than timeInterval, return item
+                onSuccess(storable.item)
+            } else {
+                expired()
+            }
+        }
+    }
+    
+    func storePerishableCollection<T: Codable>(_ collection: Array<T>, forKey key: String, expireAfter timeInterval: TimeInterval, onSuccess: () -> ()) {
+        let storableTimestampCollection = PerishableCollection<T>(expireOn: Date().timeIntervalSince1970 + timeInterval, collection: collection)
+        storeObject(storableTimestampCollection, forKey: key, onSuccess: onSuccess)
+    }
+    
+    func getPerishableCollection<T: Codable>(forKey key: String, onSuccess: ([T]?) -> (), expired: () -> ()) {
+        getObject(forKey: key) { (storable: PerishableCollection<T>?) in
+            if let storable = storable, storable.expireOn > Date().timeIntervalSince1970 {
+                // if cache exists and timestamp is not older than timeInterval, return collection
+                onSuccess(storable.collection)
+            } else {
+                expired()
+            }
+        }
+    }
 
     func removeValue(forKey key: String, onSuccess: () -> ()) {
         objectStorage.removeObject(forKey: key)

@@ -201,4 +201,93 @@ class ObjectStorageServiceTests: XCTestCase {
         }
     }
     
+    func test_storageServiceSuccessfullyStorePerishableObjectAndRetrieveIt() {
+        let ex = expectation(description: "test_storageServiceSuccessfullyStorePerishableObjectAndRetrieveIt")
+        let key = "key"
+        let storedValue = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
+        var extractedValue: CodableValueClass?
+        
+        objectStorageService.storePerishableObject(storedValue, forKey: key, expireAfter: 1, onSuccess: {
+            self.objectStorageService.getPerishableObject(forKey: key, onSuccess: { (value: CodableValueClass?) in
+                extractedValue = value
+                ex.fulfill()
+            }, expired: {
+                XCTFail()
+            })
+        })
+        
+        waitForExpectations(timeout: defaultTimeout) { (_) in
+            XCTAssertNotNil(extractedValue)
+            XCTAssertEqual(extractedValue?.id, storedValue.id)
+            XCTAssertEqual(extractedValue?.firstName, storedValue.firstName)
+            XCTAssertEqual(extractedValue?.lastName, storedValue.lastName)
+        }
+    }
+    
+    func test_storageServiceStorePerishableObjectAndItExpires() {
+        let ex = expectation(description: "test_storageServiceStorePerishableObjectAndItExpires")
+        let key = "key"
+        let storedValue = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
+        var expired = false
+        
+        objectStorageService.storePerishableObject(storedValue, forKey: key, expireAfter: -1, onSuccess: {
+            self.objectStorageService.getPerishableObject(forKey: key, onSuccess: { (value: CodableValueClass?) in
+                XCTFail()
+            }, expired: {
+                expired = true
+                ex.fulfill()
+            })
+        })
+        
+        waitForExpectations(timeout: defaultTimeout) { (_) in
+            XCTAssert(expired)
+        }
+    }
+    
+    func test_storageServiceSuccessfullyStorePerishableCollectionAndRetrieveIt() {
+        let ex = expectation(description: "test_storageServiceSuccessfullyStorePerishableCollectionAndRetrieveIt")
+        let key = "key"
+        let storable = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
+        let storedValue = [storable]
+        var extractedValue: [Codable]?
+        
+        objectStorageService.storePerishableCollection(storedValue, forKey: key, expireAfter: 1, onSuccess: {
+            self.objectStorageService.getPerishableCollection(forKey: key, onSuccess: { (value: [CodableValueClass]?) in
+                extractedValue = value
+                ex.fulfill()
+            }, expired: {
+                XCTFail()
+            })
+        })
+        
+        waitForExpectations(timeout: defaultTimeout) { (_) in
+            XCTAssertEqual(extractedValue?.count, storedValue.count)
+            if let firstCaller = extractedValue?.first as? CodableValueClass {
+                XCTAssertEqual(firstCaller.id, storedValue.first!.id)
+            } else {
+                XCTFail()
+            }
+        }
+    }
+    
+    func test_storageServiceStorePerishableCollectionAndItExpires() {
+        let ex = expectation(description: "test_storageServiceStorePerishableCollectionAndItExpires")
+        let key = "key"
+        let storable = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
+        let storedValue = [storable]
+        var expired = false
+        
+        objectStorageService.storePerishableCollection(storedValue, forKey: key, expireAfter: -1, onSuccess: {
+            self.objectStorageService.getPerishableCollection(forKey: key, onSuccess: { (value: [CodableValueClass]?) in
+                XCTFail()
+            }, expired: {
+                expired = true
+                ex.fulfill()
+            })
+        })
+        
+        waitForExpectations(timeout: defaultTimeout) { (_) in
+            XCTAssert(expired)
+        }
+    }
 }
