@@ -202,7 +202,7 @@ class ObjectStorageServiceTests: XCTestCase {
     }
     
     func test_storageServiceSuccessfullyStorePerishableObjectAndRetrieveIt() {
-        let ex = expectation(description: "test_storageServiceSuccessfullyStoreObjectAndRetrieveIt")
+        let ex = expectation(description: "test_storageServiceSuccessfullyStorePerishableObjectAndRetrieveIt")
         let key = "key"
         let storedValue = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
         var extractedValue: CodableValueClass?
@@ -225,7 +225,7 @@ class ObjectStorageServiceTests: XCTestCase {
     }
     
     func test_storageServiceStorePerishableObjectAndItExpires() {
-        let ex = expectation(description: "test_storageServiceSuccessfullyStoreObjectAndRetrieveIt")
+        let ex = expectation(description: "test_storageServiceStorePerishableObjectAndItExpires")
         let key = "key"
         let storedValue = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
         var expired = false
@@ -245,7 +245,7 @@ class ObjectStorageServiceTests: XCTestCase {
     }
     
     func test_storageServiceSuccessfullyStorePerishableCollectionAndRetrieveIt() {
-        let ex = expectation(description: "test_storageServiceSuccessfullyStoreArrayOfCodablesAndRetrieveIt")
+        let ex = expectation(description: "test_storageServiceSuccessfullyStorePerishableCollectionAndRetrieveIt")
         let key = "key"
         let storable = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
         let storedValue = [storable]
@@ -271,7 +271,7 @@ class ObjectStorageServiceTests: XCTestCase {
     }
     
     func test_storageServiceStorePerishableCollectionAndItExpires() {
-        let ex = expectation(description: "test_storageServiceSuccessfullyStoreArrayOfCodablesAndRetrieveIt")
+        let ex = expectation(description: "test_storageServiceStorePerishableCollectionAndItExpires")
         let key = "key"
         let storable = CodableValueClass(id: 123, firstName: "firstName", lastName: "lastName")
         let storedValue = [storable]
