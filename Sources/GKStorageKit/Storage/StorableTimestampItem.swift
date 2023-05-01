@@ -1,6 +1,6 @@
 //
-//  StorableTimestampItem.swift
-//  ForsythBarrKit
+//  PerishableItem.swift
+//  GKStorageKit
 //
 //  Created by Gligor Kotushevski on 4/07/19.
 //  Copyright © 2019 Gligor Kotushevski. All rights reserved.
