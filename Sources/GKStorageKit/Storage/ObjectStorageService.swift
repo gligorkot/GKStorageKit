@@ -42,6 +42,38 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
             onSuccess(nil)
         }
     }
+    
+    func storePerishableObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ()) {
+        let storableTimestampItem = StorableTimestampItem<T>(timestamp: Date().timeIntervalSince1970, item: value)
+        storeObject(storableTimestampItem, forKey: key, onSuccess: onSuccess)
+    }
+    
+    func getPerishableObject<T: Codable>(expireAfter timeInterval: TimeInterval = 60, forKey key: String, onSuccess: (T) -> (), expired: () -> ()) {
+        getObject(forKey: key) { (storable: StorableTimestampItem<T>?) in
+            if let storable = storable, storable.timestamp + timeInterval > Date().timeIntervalSince1970 {
+                // if cached exists and timestamp is not older than 60 seconds, return item
+                onSuccess(storable.item)
+            } else {
+                expired()
+            }
+        }
+    }
+    
+    func storePerishableCollection<T: Codable>(_ collection: Array<T>, forKey key: String, onSuccess: () -> ()) {
+        let storableTimestampCollection = StorableTimestampCollection<T>(timestamp: Date().timeIntervalSince1970, collection: collection)
+        storeObject(storableTimestampCollection, forKey: key, onSuccess: onSuccess)
+    }
+    
+    func getPerishableCollection<T: Codable>(expireAfter timeInterval: TimeInterval = 60, forKey key: String, onSuccess: ([T]?) -> (), expired: () -> ()) {
+        getObject(forKey: key) { (storable: StorableTimestampCollection<T>?) in
+            if let storable = storable, storable.timestamp + timeInterval > Date().timeIntervalSince1970 {
+                // if cached exists and timestamp is not older than 60 seconds, return item
+                onSuccess(storable.collection)
+            } else {
+                expired()
+            }
+        }
+    }
 
     func removeValue(forKey key: String, onSuccess: () -> ()) {
         objectStorage.removeObject(forKey: key)

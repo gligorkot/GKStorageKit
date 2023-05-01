@@ -23,6 +23,10 @@ public protocol ObjectStorageInterface {
     func getCollection<T: Codable>(forKey key: String, onSuccess: ([T]?) -> ())
     func storeObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
     func getObject<T: Codable>(forKey key: String, onSuccess: (T?) -> ())
+    func storePerishableObject<T: Codable>(_ value: T, forKey key: String, onSuccess: () -> ())
+    func getPerishableObject<T: Codable>(expireAfter timeInterval: TimeInterval, forKey key: String, onSuccess: (T) -> (), expired: () -> ())
+    func storePerishableCollection<T: Codable>(_ collection: Array<T>, forKey key: String, onSuccess: () -> ())
+    func getPerishableCollection<T: Codable>(expireAfter timeInterval: TimeInterval, forKey key: String, onSuccess: ([T]?) -> (), expired: () -> ())
     func removeValue(forKey key: String, onSuccess: () -> ())
     func cleanStorage(onSuccess: () -> ())
 }
