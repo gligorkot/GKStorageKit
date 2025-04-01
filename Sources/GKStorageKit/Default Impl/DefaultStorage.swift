@@ -27,6 +27,13 @@ public final class DefaultStorage: StorageProtocol {
         }
         return Valet.valet(with: valetIdentifier, accessibility: .whenUnlocked)
     }
+    
+    public var secureEnclaveStorage: SecureEnclaveStorage {
+        guard let valetIdentifier = Identifier(nonEmpty: storageIdentifier) else {
+            fatalError("Could not set up secure enclave storage")
+        }
+        return SecureEnclaveValet.valet(with: valetIdentifier, accessControl: .biometricCurrentSet)
+    }
 
     public var userDefaults: UserDefaults {
         return UserDefaults(suiteName: storageIdentifier)!

@@ -61,6 +61,10 @@ public final class StorageKit {
     public class var secureStorage: SecureStorageInterface {
         return SecureStorageService(secureStorage: StorageKitConfiguration.shared.storage.secureStorage)
     }
+    
+    public class var secureEnclaveStorage: SecureEnclaveStorageInterface {
+        return SecureEnclaveStorageService(secureEnclaveStorage: StorageKitConfiguration.shared.storage.secureEnclaveStorage)
+    }
 
     public class var objectStorage: ObjectStorageInterface {
         return ObjectStorageService(storage: StorageKitConfiguration.shared.storage.userDefaults)

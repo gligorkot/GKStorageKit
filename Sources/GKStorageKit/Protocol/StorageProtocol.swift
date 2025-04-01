@@ -12,6 +12,7 @@ public protocol StorageProtocol {
     var storageIdentifier: String { get }
     var persistentStorageIdentifier: String { get }
     var secureStorage: SecureStorage { get }
+    var secureEnclaveStorage: SecureEnclaveStorage { get }
     var userDefaults: UserDefaults { get }
     var persistentUserDefaults: UserDefaults { get }
     var fileStorageUrl: URL { get }
