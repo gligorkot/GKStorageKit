@@ -100,8 +100,8 @@ public final class StorageKit {
             do {
                 try await secureEnclaveStorage.cleanStorage()
                 group.leave()
-            } catch let err {
-//                error =  ErrorResponse(title: "Something went wrong", message: error.localizedDescription)
+            } catch _ {
+                error = StorageError.cleanStorageError.toResponse()
                 group.leave()
             }
         }
