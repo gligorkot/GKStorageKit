@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let defaultTimeout: TimeInterval = 0.2
+public let defaultTimeout: TimeInterval = 1.0
 
 // used for stubbing json objects in tests
 public func stubbedObject(_ filename: String) -> Data! {
