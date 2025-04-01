@@ -43,5 +43,14 @@ final class SecureEnclaveStorageService: SecureEnclaveStorageInterface {
             throw error
         }
     }
+    
+    func cleanStorage() async throws {
+        do {
+            try storage.removeAllObjects()
+        } catch {
+            debugPrint(error)
+            throw error
+        }
+    }
 }
 

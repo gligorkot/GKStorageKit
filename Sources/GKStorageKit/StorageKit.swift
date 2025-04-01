@@ -25,6 +25,7 @@ public protocol SecureEnclaveStorageInterface {
     func storeSecret(_ secret: String, key: String) async throws
     func getSecret(key: String, prompt: String) async throws -> String
     func deleteSecret(key: String) async throws
+    func cleanStorage() async throws
 }
 
 public protocol ObjectStorageInterface {
@@ -92,7 +93,19 @@ public final class StorageKit {
             error = err
             group.leave()
         }
-
+        
+        group.enter()
+        // clean secure enclave storage
+        Task {
+            do {
+                try await secureEnclaveStorage.cleanStorage()
+                group.leave()
+            } catch let err {
+//                error =  ErrorResponse(title: "Something went wrong", message: error.localizedDescription)
+                group.leave()
+            }
+        }
+        
         group.enter()
         // clean object storage
         objectStorage.cleanStorage(onSuccess: {
