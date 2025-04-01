@@ -23,6 +23,10 @@ final class TestStorage: StorageProtocol {
     var secureStorage: SecureStorage {
         return Valet.iCloudValet(with: Identifier(nonEmpty: storageIdentifier)!, accessibility: .whenUnlocked)
     }
+    
+    var secureEnclaveStorage: SecureEnclaveStorage {
+        return SecureEnclaveValet.valet(with: Identifier(nonEmpty: storageIdentifier)!, accessControl: .biometricCurrentSet)
+    }
 
     var userDefaults: UserDefaults {
         return UserDefaults(suiteName: storageIdentifier)!
@@ -49,6 +53,10 @@ final class ErrorStorage: StorageProtocol {
 
     var secureStorage: SecureStorage {
         return ErrorValet()
+    }
+    
+    var secureEnclaveStorage: SecureEnclaveStorage {
+        return ErrorValetSecureEnclave()
     }
 
     var userDefaults: UserDefaults {

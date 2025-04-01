@@ -41,4 +41,23 @@ final class ErrorValet: SecureStorage {
 
 }
 
+final class ErrorValetSecureEnclave: SecureEnclaveStorage {
+
+    func setString(_ string: String, forKey key: String) throws {
+        throw "Some error"
+    }
+
+    func string(forKey key: String, withPrompt userPrompt: String) throws -> String {
+        throw "Some error"
+    }
+
+    func removeObject(forKey key: String) throws {
+        throw "Some error"
+    }
+
+    func removeAllObjects() throws {
+        throw "Some error"
+    }
+}
+
 extension String: Error {}
