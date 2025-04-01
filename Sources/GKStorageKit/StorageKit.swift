@@ -16,6 +16,15 @@ public protocol SecureStorageInterface {
     func getObject<T: Codable>(forKey key: String, onSuccess: (T?) -> (), onFail: FailureBlock)
     func removeValue(forKey key: String, onSuccess: () -> (), onFail: FailureBlock)
     func cleanStorage(onSuccess: () -> (), onFail: FailureBlock)
+    func storeString(_ string: String, key: String) async throws
+    func getString(key: String) async throws -> String
+    func removeValue(key: String) async throws
+}
+
+public protocol SecureEnclaveStorageInterface {
+    func storeSecret(_ secret: String, key: String) async throws
+    func getSecret(key: String, prompt: String) async throws -> String
+    func deleteSecret(key: String) async throws
 }
 
 public protocol ObjectStorageInterface {
@@ -29,6 +38,9 @@ public protocol ObjectStorageInterface {
     func getPerishableCollection<T: Codable>(forKey key: String, onSuccess: ([T]?) -> (), expired: () -> ())
     func removeValue(forKey key: String, onSuccess: () -> ())
     func cleanStorage(onSuccess: () -> ())
+    func storeObject<T: Codable>(_ value: T, forKey key: String) async
+    func getObject<T: Codable>(forKey key: String) async -> T?
+    func removeValue(forKey key: String) async
 }
 
 public protocol FileStorageInterface {

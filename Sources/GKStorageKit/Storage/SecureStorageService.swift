@@ -18,6 +18,7 @@ final class SecureStorageService: SecureStorageInterface {
         self.storage = secureStorage
     }
 
+    // MARK: Callback
     func storeString(_ string: String, forKey key: String, onSuccess: () -> (), onFail: FailureBlock) {
         let stored: Bool
         do {
@@ -92,6 +93,34 @@ final class SecureStorageService: SecureStorageInterface {
         }
         try? storage.removeAllObjects()
         onSuccess()
+    }
+    
+    // MARK: Async
+    func storeString(_ string: String, key: String) async throws {
+        do {
+            try storage.setString(string, forKey: key)
+        } catch {
+            debugPrint(error)
+            throw error
+        }
+    }
+    
+    func getString(key: String) async throws -> String {
+        do {
+            return try storage.string(forKey: key)
+        } catch {
+            debugPrint(error)
+            throw error
+        }
+    }
+    
+    func removeValue(key: String) async throws {
+        do {
+            try storage.removeObject(forKey: key)
+        } catch {
+            debugPrint(error)
+            throw error
+        }
     }
 
 }
