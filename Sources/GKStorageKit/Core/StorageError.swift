@@ -16,6 +16,7 @@ enum StorageError: BaseError {
     case getError(String)
     case deleteError(String)
     case cleanStorageError
+    case cleanSecureEnclaveStorageError
     case cleanFileStorageError
 
     func toResponse() -> ErrorResponse {
@@ -53,6 +54,8 @@ private final class StorageErrorContentAdapter: BaseErrorContentAdapter {
             return  StorageErrorResponse(message: "Cannot remove secure value. Keychain inaccessible.", debugDescription: "Cannot remove secure value. Keychain inaccessible.")
         case .cleanStorageError:
             return  StorageErrorResponse(message: "Cannot clean secure storage. Keychain inaccessible.", debugDescription: "Cannot clean secure storage. Keychain inaccessible.")
+        case .cleanSecureEnclaveStorageError:
+            return  StorageErrorResponse(message: "Cannot clean secure enclave storage.", debugDescription: "Cannot clean secure enclave storage.")
         case .cleanFileStorageError:
             return  StorageErrorResponse(message: "Unable to clean file storage.", debugDescription: "Unable to clean file storage.")
         }

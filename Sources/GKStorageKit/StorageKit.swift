@@ -101,7 +101,7 @@ public final class StorageKit {
                 try await secureEnclaveStorage.cleanStorage()
                 group.leave()
             } catch _ {
-                error = StorageError.cleanStorageError.toResponse()
+                error = StorageError.cleanSecureEnclaveStorageError.toResponse()
                 group.leave()
             }
         }
