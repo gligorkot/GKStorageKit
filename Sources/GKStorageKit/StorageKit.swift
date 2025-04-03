@@ -111,6 +111,13 @@ public final class StorageKit {
         objectStorage.cleanStorage(onSuccess: {
             group.leave()
         })
+        
+        group.enter()
+        // clean persistent object storage
+        persistentObjectStorage.cleanStorage(onSuccess: {
+            group.leave()
+        })
+
 
         group.enter()
         // clean file storage
