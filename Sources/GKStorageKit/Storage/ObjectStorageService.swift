@@ -17,6 +17,7 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
         self.objectStorage = storage
     }
 
+    // MARK: Callback
     func storeCollection<T: Codable>(_ collection: Array<T>, forKey key: String, onSuccess: () -> ()) {
         objectStorage.set(collection.map({ try? JSONEncoder().encode($0) }), forKey: key)
         onSuccess()
@@ -91,4 +92,17 @@ final class ObjectStorageService: ObjectStorageInterface, StorageKitDecorator {
         onSuccess()
     }
 
+    // MARK: Async
+    func storeObject<T: Codable>(_ value: T, forKey key: String) async {
+        objectStorage.set(try? JSONEncoder().encode(value), forKey: key)
+    }
+
+    func getObject<T: Codable>(forKey key: String) async -> T? {
+        guard let data = objectStorage.value(forKey: key) as? Data else { return nil }
+        return try? JSONDecoder().decode(T.self, from: data)
+    }
+    
+    func removeValue(forKey key: String) async {
+        objectStorage.removeObject(forKey: key)
+    }
 }
