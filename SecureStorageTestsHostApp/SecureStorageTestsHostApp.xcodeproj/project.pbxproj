@@ -551,7 +551,7 @@
 			repositoryURL = "https://github.com/square/Valet.git";
 			requirement = {
 				kind = exactVersion;
-				version = 4.1.2;
+				version = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
