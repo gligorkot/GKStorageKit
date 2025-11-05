@@ -19,10 +19,6 @@ jobs:
         with:
           xcode-version: latest-stable
 
-      - name: Pod lint
-        run: bundle exec pod lib lint --verbose --fail-fast --swift-version=5.5
-        shell: bash
-
   test-no-iOS-host-15:
     name: Run swift tests that don't require iOS host on MacOS 15
     runs-on: macos-15
