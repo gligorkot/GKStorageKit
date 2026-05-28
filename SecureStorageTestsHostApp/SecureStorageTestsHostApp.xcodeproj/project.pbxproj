@@ -550,8 +550,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/square/Valet.git";
 			requirement = {
-				kind = exactVersion;
-				version = 5.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
