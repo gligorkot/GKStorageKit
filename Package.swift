@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/gligorkot/GKBaseKit.git", from: Version("2.0.0")),
-        .package(url: "https://github.com/square/Valet.git", from: Version("5.0.0")),
+        .package(url: "https://github.com/square/Valet.git", .upToNextMinor(from: "5.1.0")),
         .package(url: "https://github.com/mattgallagher/CwlPreconditionTesting.git", from: Version("2.0.0"))
     ],
     targets: [
